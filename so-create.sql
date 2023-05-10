@@ -36,8 +36,9 @@ CREATE TABLE Comments (
 
 CREATE TABLE Posts (
     id                  INTEGER UNIQUE NOT NULL,    --Id
-    type                INTEGER NOT NULL,           --PostTypeId
-    creation            TIMESTAMP NOT NULL,         --CreationDate
+    posttypeid          INTEGER NOT NULL,           --PostTypeId
+    parentid            INTEGER                     --ParentId
+    creationdate        TIMESTAMP NOT NULL,         --CreationDate
     score               INTEGER,                    --Score
     viewcount           INTEGER,                    --ViewCount
     title               TEXT,                       --Title
