@@ -38,7 +38,7 @@ filename = "Posts.xml"
 posts = ElementTree.iterparse(filename) 
 tags = {}
 tag_id = 1
-print "COPY posts (id, type, creation, score, viewcount, title, body, userid, lastactivity, tags, answercount, commentcount) FROM stdin;"
+print "COPY posts (id, posttypeid, parentid, creationdate, score, viewcount, title, body, owneruserid, lastactivitydate, tags, answercount, commentcount) FROM stdin;"
 
 for event, post in posts:
     if event == "end" and post.tag == "row":
@@ -48,6 +48,11 @@ for event, post in posts:
             type = int(post.attrib["PostTypeId"])
         else:
             type = "\N"
+
+        if post.attrib.has_key("ParentId"):
+            parent = int(post.attrib["ParentId"])
+        else:
+            parent = "\N"
 
         creation = post.attrib["CreationDate"]
 
@@ -96,7 +101,7 @@ for event, post in posts:
         else:
             commentcount = "\N"
 
-        print "%i\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s" % (id, type, creation, score, viewcount, title.encode(encoding), body.encode(encoding), owner, lastactivity, tags.encode(encoding), answercount, commentcount)
+        print "%i\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s" % (id, type, parent, creation, score, viewcount, title.encode(encoding), body.encode(encoding), owner, lastactivity, tags.encode(encoding), answercount, commentcount)
         post.clear()
     
 print "\."
