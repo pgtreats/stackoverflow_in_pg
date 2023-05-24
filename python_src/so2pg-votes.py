@@ -36,17 +36,27 @@ os.chdir(sys.argv[1])
 
 filename = "Votes.xml"
 votes = ElementTree.iterparse(filename) 
-print "COPY votes (id, type, postid, creation) FROM stdin;"
+print "COPY Votes (Id, PostId, VoteTypeId, UserId, CreationDate, BountyAmount) FROM stdin;"
 for event, vote in votes:
     if event == "end" and vote.tag == "row":
         id = int(vote.attrib["Id"])
 
-        type = int(vote.attrib["VoteTypeId"])
-
         postid = vote.attrib["PostId"]
+
+	type = int(vote.attrib["VoteTypeId"])
+
+        if vote.attrib.has_key("UserId"):
+            voter = int(vote.attrib["UserId"])
+        else:
+            voter = "\N"
 
         creation = vote.attrib["CreationDate"]
         
-        print "%i\t%s\t%s\t%s" % (id, type, postid, creation)
+        if vote.attrib.has_key("BountyAmount"):
+            bounty = int(vote.attrib["BountyAmount"])
+        else:
+            bounty = "\N"
+
+	print "%i\t%s\t%s\t%s\t%s\t%s" % (id, postid, type, voter, creation, bounty)
         vote.clear()
 print "\."
