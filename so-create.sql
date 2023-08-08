@@ -30,7 +30,7 @@ CREATE TABLE Comments (
     postid              INTEGER NOT NULL,           --PostId
     score               INTEGER,                    --Score
     text                TEXT,                       --Text
-    creation            TIMESTAMP NOT NULL,         --CreationDate
+    creationdate        TIMESTAMP NOT NULL,         --CreationDate
     userid              INTEGER                     --UserId
 );
 
@@ -43,8 +43,8 @@ CREATE TABLE Posts (
     viewcount           INTEGER,                    --ViewCount
     title               TEXT,                       --Title
     body                TEXT,                       --Body
-    userid              INTEGER,                    --OwnerUserId
-    lastactivity        TIMESTAMP,                  --LastActivityDate
+    owneruserid         INTEGER,                    --OwnerUserId
+    lastactivitydate    TIMESTAMP,                  --LastActivityDate
     tags                TEXT,                       --Tags
     answercount         INTEGER,                    --AnswerCount
     commentcount        INTEGER                     --CommentCount
@@ -62,12 +62,13 @@ CREATE TABLE Votes (
     id                  INTEGER UNIQUE NOT NULL,    --Id
     type                INTEGER NOT NULL,           --VoteTypeId
     postid              INTEGER NOT NULL,           --PostId
-    creation            DATE NOT NULL               --CreationDate
+    creationdate        DATE NOT NULL,              --CreationDate
+    bountyamount        SMALLINT                    --BountyAmount
 );
 
 CREATE TABLE PostLinks (
     id                  INTEGER UNIQUE NOT NULL,    --Id
-    creation            TIMESTAMP NOT NULL,         --CreationDate
+    creationdate        TIMESTAMP NOT NULL,         --CreationDate
     postid              INTEGER,                    --PostId
     relatedpostid       INTEGER,                    --RelatedPostId
     linktypeid          INTEGER                     --LinkTypeId
@@ -89,7 +90,7 @@ CREATE TABLE Badges (
     userid              INTEGER,                    --UserId
     name                TEXT,                       --Name
     date                TIMESTAMP,                  --Date
-    badgeclass          INTEGER,                    --Class
+    class               INTEGER,                    --Class
     tagbased            TEXT                        --TagBased
 );
 

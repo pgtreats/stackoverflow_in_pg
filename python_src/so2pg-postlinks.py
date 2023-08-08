@@ -36,7 +36,7 @@ os.chdir(sys.argv[1])
 
 filename = "PostLinks.xml"
 postlinks = ElementTree.iterparse(filename) 
-print "COPY postlinks (id, creation, postid, relatedpostid, linktypeid) FROM stdin;"
+print "COPY postlinks (id, creationdate, postid, relatedpostid, linktypeid) FROM stdin;"
 for event, postlink in postlinks:
     if event == "end" and postlink.tag == "row":
         id = int(postlink.attrib["Id"])

@@ -36,7 +36,7 @@ os.chdir(sys.argv[1])
 
 filename = "Comments.xml"
 comments = ElementTree.iterparse(filename) 
-print "COPY Comments (id, postid, score, text, creation, userid) FROM stdin;"
+print "COPY Comments (id, postid, score, text, creationdate, userid) FROM stdin;"
 
 for event, comment in comments:
     if event == "end" and comment.tag == "row":
