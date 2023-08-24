@@ -59,12 +59,16 @@ CREATE TABLE Tags (
 );
 
 CREATE TABLE Votes (
-    id                  INTEGER UNIQUE NOT NULL,    --Id
-    type                INTEGER NOT NULL,           --VoteTypeId
-    postid              INTEGER NOT NULL,           --PostId
-    creationdate        DATE NOT NULL,              --CreationDate
-    bountyamount        SMALLINT                    --BountyAmount
+    Id                  INTEGER NOT NULL,           --Id
+    VoteTypeId          INTEGER NOT NULL,           --VoteTypeId
+    PostId              INTEGER NOT NULL,           --PostId
+    UserId              INTEGER,                    --UserId
+    CreationDate        DATE NOT NULL,              --CreationDate
+    BountyAmount        SMALLINT                    --BountyAmount
 );
+
+COMMENT ON COLUMN Votes.CreationDate IS 'Time data purposefully removed to protect user privacy';
+
 
 CREATE TABLE PostLinks (
     id                  INTEGER UNIQUE NOT NULL,    --Id
