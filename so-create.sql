@@ -90,11 +90,11 @@ CREATE TABLE PostHistory (
 );
 
 CREATE TABLE Badges (
-    id                  INTEGER UNIQUE NOT NULL,    --Id
-    userid              INTEGER,                    --UserId
-    name                TEXT,                       --Name
-    date                TIMESTAMP,                  --Date
-    class               INTEGER,                    --Class
-    tagbased            TEXT                        --TagBased
+    Id                  INTEGER NOT NULL,           --Id
+    UserId              INTEGER,                    --UserId
+    Name                TEXT,                       --Name
+    Date                TIMESTAMP,                  --Date
+    Class               INTEGER,                    --Class
+    TagBased            TEXT                        --TagBased
 );
 
