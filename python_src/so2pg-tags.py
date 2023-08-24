@@ -36,7 +36,7 @@ os.chdir(sys.argv[1])
 
 filename = "Tags.xml"
 tags = ElementTree.iterparse(filename) 
-print "COPY tags (id, name, count, excerptpost, wikipost) FROM stdin;"
+print "COPY tags (id, tagname, count, excerptpostid, wikipostid) FROM stdin;"
 for event, tag in tags:
     if event == "end" and tag.tag == "row":
         id = int(tag.attrib["Id"])

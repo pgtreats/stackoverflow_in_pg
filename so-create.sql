@@ -51,11 +51,11 @@ CREATE TABLE Posts (
 );
 
 CREATE TABLE Tags (
-    id                  INTEGER UNIQUE NOT NULL,    --Id
-    name                TEXT UNIQUE NOT NULL,       --TagName
-    count               INTEGER,                    --Count
-    excerptpost         INTEGER,                    --ExcerptPostId
-    wikipost            INTEGER                     --WikiPostId
+    Id                  INTEGER NOT NULL,           --Id
+    TagName             TEXT NOT NULL,              --TagName
+    Count               INTEGER,                    --Count
+    ExcerptPostId       INTEGER,                    --ExcerptPostId
+    WikiPostId          INTEGER                     --WikiPostId
 );
 
 CREATE TABLE Votes (
