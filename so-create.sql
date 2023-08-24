@@ -71,11 +71,11 @@ COMMENT ON COLUMN Votes.CreationDate IS 'Time data purposefully removed to prote
 
 
 CREATE TABLE PostLinks (
-    id                  INTEGER UNIQUE NOT NULL,    --Id
-    creationdate        TIMESTAMP NOT NULL,         --CreationDate
-    postid              INTEGER,                    --PostId
-    relatedpostid       INTEGER,                    --RelatedPostId
-    linktypeid          INTEGER                     --LinkTypeId
+    Id                  INTEGER NOT NULL,           --Id
+    CreationDate        TIMESTAMP NOT NULL,         --CreationDate
+    PostId              INTEGER,                    --PostId
+    RelatedPostId       INTEGER,                    --RelatedPostId
+    LinkTypeId          INTEGER                     --LinkTypeId
 );
 
 CREATE TABLE PostHistory (
