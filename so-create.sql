@@ -1,3 +1,5 @@
+\set ON_ERROR_STOP true
+
 ALTER TABLE Comments DROP CONSTRAINT comments_id_fkey;
 DROP TABLE Votes;
 DROP TABLE Tags;
