@@ -79,14 +79,14 @@ CREATE TABLE PostLinks (
 );
 
 CREATE TABLE PostHistory (
-    id                  INTEGER UNIQUE NOT NULL,    --Id
-    type                INTEGER,                    --PostHistoryTypeId
-    postid              INTEGER,                    --PostId
-    revisionguid        TEXT,                       --RevisionGUID
-    creation            TIMESTAMP NOT NULL,         --CreationDate
-    userid              INTEGER,                    --UserId
-    userdisplaymame     TEXT,                       --UserDisplayName
-    text                TEXT                        --Text
+    Id                  INTEGER NOT NULL,           --Id
+    PostHistoryTypeId   INTEGER,                    --PostHistoryTypeId
+    PostId              INTEGER,                    --PostId
+    RevisionGUID        TEXT,                       --RevisionGUID
+    CreationDate        TIMESTAMP NOT NULL,         --CreationDate
+    Userid              INTEGER,                    --UserId
+    UserDisplayName     TEXT,                       --UserDisplayName
+    Text                TEXT                        --Text
 );
 
 CREATE TABLE Badges (

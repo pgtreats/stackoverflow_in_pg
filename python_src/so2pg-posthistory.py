@@ -38,7 +38,7 @@ filename = "PostHistory.xml"
 postHistory = ElementTree.iterparse(filename) 
 tags = {}
 tag_id = 1
-print "COPY posthistory (id, type, postid, revisionguid, creation, userid, userdisplaymame, text) FROM stdin;"
+print "COPY posthistory (id, posthistorytypeid, postid, revisionguid, creationdate, userid, userdisplayname, text) FROM stdin;"
 
 for event, post in postHistory:
     if event == "end" and post.tag == "row":
