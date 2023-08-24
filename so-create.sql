@@ -11,18 +11,18 @@ DROP TABLE Badges;
 
 
 CREATE TABLE Users (
-    id                  INTEGER UNIQUE NOT NULL,    --Id
-    reputation          INTEGER NOT NULL,           --Reputation
-    creation            TIMESTAMP NOT NULL,         --CreationDate
-    name                TEXT,                       --DisplayName Yes, can be null some times
-    lastaccess          TIMESTAMP,                  --LastAccessDate
-    website             TEXT,                       --WebsiteUrl
-    location            TEXT,                       --Location
-    aboutme             TEXT,                       --AboutMe
-    views               INTEGER,                    --Views
-    upvotes             INTEGER,                    --upvotes
-    downvotes           INTEGER,                    --downvotes
-    age                 INTEGER                     --age
+    Id                  INTEGER NOT NULL,           --Id
+    Reputation          INTEGER NOT NULL,           --Reputation
+    CreationDate        TIMESTAMP NOT NULL,         --CreationDate
+    DisplayName         TEXT,                       --DisplayName Yes, can be null some times
+    LastAccessDate      TIMESTAMP,                  --LastAccessDate
+    WebsiteUrl          TEXT,                       --WebsiteUrl
+    Location            TEXT,                       --Location
+    AboutMe             TEXT,                       --AboutMe
+    Views               INTEGER,                    --Views
+    UpVotes             INTEGER,                    --upvotes
+    DownVotes           INTEGER,                    --downvotes
+    Age                 INTEGER                     --age
 );
 
 CREATE TABLE Comments (

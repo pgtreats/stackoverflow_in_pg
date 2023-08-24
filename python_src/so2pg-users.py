@@ -36,7 +36,7 @@ os.chdir(sys.argv[1])
 
 filename = "Users.xml"
 users = ElementTree.iterparse(filename) 
-print "COPY users (id, reputation, creation, name, lastaccess, website, location, aboutme, views, upvotes, downvotes, age) FROM stdin;"
+print "COPY users (id, reputation, creationdate, displayname, lastaccessdate, websiteurl, location, aboutme, views, upvotes, downvotes, age) FROM stdin;"
 for event, user in users:
     if event == "end" and user.tag == "row":
         id = int(user.attrib["Id"])
