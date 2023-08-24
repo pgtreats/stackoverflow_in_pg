@@ -26,12 +26,12 @@ CREATE TABLE Users (
 );
 
 CREATE TABLE Comments (
-    id                  INTEGER UNIQUE NOT NULL,    --Id
-    postid              INTEGER NOT NULL,           --PostId
-    score               INTEGER,                    --Score
-    text                TEXT,                       --Text
-    creationdate        TIMESTAMP NOT NULL,         --CreationDate
-    userid              INTEGER                     --UserId
+    Id                  INTEGER NOT NULL,           --Id
+    PostId              INTEGER NOT NULL,           --PostId
+    Score               INTEGER,                    --Score
+    Text                TEXT,                       --Text
+    CreationDate        TIMESTAMP NOT NULL,         --CreationDate
+    UserId              INTEGER                     --UserId
 );
 
 CREATE TABLE Posts (
