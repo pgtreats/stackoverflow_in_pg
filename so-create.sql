@@ -35,20 +35,20 @@ CREATE TABLE Comments (
 );
 
 CREATE TABLE Posts (
-    id                  INTEGER UNIQUE NOT NULL,    --Id
-    posttypeid          INTEGER NOT NULL,           --PostTypeId
-    parentid            INTEGER                     --ParentId
-    creationdate        TIMESTAMP NOT NULL,         --CreationDate
-    score               INTEGER,                    --Score
-    viewcount           INTEGER,                    --ViewCount
-    title               TEXT,                       --Title
-    body                TEXT,                       --Body
-    owneruserid         INTEGER,                    --OwnerUserId
-    lastactivitydate    TIMESTAMP,                  --LastActivityDate
-    tags                TEXT,                       --Tags
-    answercount         INTEGER,                    --AnswerCount
-    commentcount        INTEGER                     --CommentCount
-    );
+    Id                  INTEGER NOT NULL,           --Id
+    PostTypeId          INTEGER NOT NULL,           --PostTypeId
+    ParentId            INTEGER                     --ParentId
+    CreationDate        TIMESTAMP NOT NULL,         --CreationDate
+    Score               INTEGER,                    --Score
+    ViewCount           INTEGER,                    --ViewCount
+    Title               TEXT,                       --Title
+    Body                TEXT,                       --Body
+    OwnerUserId         INTEGER,                    --OwnerUserId
+    LastActivityDate    TIMESTAMP,                  --LastActivityDate
+    Tags                TEXT,                       --Tags
+    AnswerCount         INTEGER,                    --AnswerCount
+    CommentCount        INTEGER                     --CommentCount
+);
 
 CREATE TABLE Tags (
     id                  INTEGER UNIQUE NOT NULL,    --Id
